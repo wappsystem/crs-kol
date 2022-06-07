@@ -26,16 +26,11 @@
 
     m[p+"main-panel"]    ={url:H+"/panels/main.html", };
     m[p+"quest-panel"]     ={url:H+"/panels/quest.html"};
-
-    m[p+"adverse-event-data"] ={url:H+"/form-grid/unscheduled/adverse-event-data.html",Table:"crs-kol-adverse-event",form_module:"adverse-event-form", task_name:"Adverse event" };
-    m[p+"adverse-event-form"] ={url:H+"/form-grid/unscheduled/adverse-event-form.html",Table:"crs-kol-adverse-event", task_name:"Adverse event" };
-    m[p+"serious-adverse-event-data"] ={url:H+"/form-grid/unscheduled/serious-adverse-event-data.html",Table:"crs-kol-serious-adverse-event",form_module:"serious-adverse-event-form", task_name:"Serious Adverse event" };
-    m[p+"serious-adverse-event-form"] ={url:H+"/form-grid/unscheduled/serious-adverse-event-form.html",Table:"crs-kol-serious-adverse-event", task_name:"Serious Adverse event" };
-    m[p+"serious-adverse-event-follow-up-data"] ={url:H+"/form-grid/unscheduled/serious-adverse-event-follow-up-data.html",Table:"crs-kol-serious-adverse-event-follow-up",form_module:"serious-adverse-event-follow-up-form", task_name:"Serious Adverse event follow-up" };
-    m[p+"serious-adverse-event-follow-up-form"] ={url:H+"/form-grid/unscheduled/serious-adverse-event-follow-up-form.html",Table:"crs-kol-serious-adverse-event-follow-up", task_name:"Serious Adverse event follow-up" };
     
-    m[p+"demographic-data"] ={url:H+"/form-grid/questionnaires/demographic-data.html",Table:"crs-kol-demographic",form_module:"demographic-form", task_name:"Baseline Demographics" };
-    m[p+"demographic-form"] ={url:H+"/form-grid/questionnaires/demographic-form.html",Table:"crs-kol-demographic", task_name:"Baseline - Demographics" };
+    m[p+"nas-vas-data"] ={url:H+"/form-grid/questionnaires/nas-vas-data.html",Table:"crs-kol-nas-vas",form_module:"nas-vas-form", task_name:"NÄS-VAS" };
+    m[p+"nas-vas-form"] ={url:H+"/form-grid/questionnaires/nas-vas-form.html",Table:"crs-kol-nas-vas", task_name:"NÄS-VAS" };
+    m[p+"luftvagsformular-data"] ={url:H+"/form-grid/questionnaires/luftvagsformular-data.html",Table:"crs-kol-luftvagsformular",form_module:"luftvagsformular-form", task_name:"Luftvägsformulär" };
+    m[p+"luftvagsformular-form"] ={url:H+"/form-grid/questionnaires/luftvagsformular-form.html",Table:"crs-kol-luftvagsformular", task_name:"Luftvägsformulär" };
 
     m[p+"isi-bl-data"]      ={url:H+"/form-grid/questionnaires/isi-bl-data.html",Table:"crs-kol-screening",form_module:"isi-bl-form", task_name:"Baseline - Insomnia Severity Index" };
     m[p+"isi-bl-form"]      ={url:H+"/form-grid/questionnaires/isi-form.html",Table:"crs-kol-screening", task_name:"Baseline - Insomnia Severity Index" };
