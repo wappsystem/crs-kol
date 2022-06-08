@@ -14,7 +14,7 @@
                     </fieldset>
                 </div>
             </div>
-            <div id=quest1__ID style='max-width:800px;margin-left:auto;margin-right:auto;' >
+            <div style='max-width:800px;margin-left:auto;margin-right:auto;' >
                 <div class="form-group box">
                     <h2 id="title__ID"></h2>
                 </div>
@@ -235,7 +235,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div id="pqair_mucus__ID">
+                <div id="h_pqair_mucus__ID">
                     <div class="form-group box">
                         <div class="row">
                             <div class="col-sm control-group">
@@ -305,7 +305,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div id="pqair_pip__ID">
+                <div id="h_pqair_pip__ID">
                     <div class="form-group box">
                         <h3>13a. Hur gammal var du när dessa besvär började?</h3>
                         <div class="questiongroup">
@@ -364,7 +364,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div id="pqair_smo__ID">
+                <div id="h_pqair_smo__ID">
                     <div class="form-group box">
                         <h3>15a. Hur mycket röker/rökte Du? <i>(ange ett ungefärligt medelvärde)</i></h3>
                         <div class="questiongroup">
@@ -462,6 +462,128 @@
             /*VmInclude: '__COMPONENT__/f/form.01.js'*/
              /*VmInclude:__HOST__/assets/js/shared-form.js*/
             //---------------------------------------
+            var load2 = m.load;
+            m.load = function () {
+                load2();
+                if ($('[type="date"]').prop('type') != 'date') {
+                    $('[type="date"]').datepicker();
+                }
+                //--------------
+                if($('#D__ID input[name=pqair_mucus]:checked').val()=='1'){
+                    $('#h_pqair_mucus__ID').show()
+                    $('#D__ID input[name=pqair_mucus_3m]').prop('required',true);
+                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
+                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_mucus__ID').hide();
+                    $('#D__ID input[name=pqair_mucus_3m]').prop('required',false);
+                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
+                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                }
+                //--------------
+                if($('#D__ID input[name=pqair_pip]:checked').val()=='1'){
+                    $('#h_pqair_pip__ID').show()
+                    $('#D__ID input[name=pqair_pip_first]').prop('required',true);
+                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_pip__ID').hide();
+                    $('#D__ID input[name=pqair_pip_first]').prop('required',false);
+                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',true);
+                }
+                //--------------
+                if($('#D__ID input[name=pqair_smo]:checked').val()=='1' || $('#D__ID input[name=pqair_smo_ex]:checked').val()=='1'){
+                    $('#h_pqair_smo__ID').show()
+                    $('#D__ID input[name=pqair_smo_cigg]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_ciga]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_pipe]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_start]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_years]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_end]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_smo__ID').hide();
+                    $('#D__ID input[name=pqair_smo_cigg]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_ciga]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_pipe]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_start]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_years]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_end]').prop('required',false);
+                }
+                //--------------
+            }
+            //------------------------------------
+            $('#D__ID input[name=pqair_mucus]').on('change',function(){
+                if($('#D__ID input[name=pqair_mucus]:checked').val()=='1'){
+                    $('#h_pqair_mucus__ID').show()
+                    $('#D__ID input[name=pqair_mucus_3m]').prop('required',true);
+                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
+                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_mucus__ID').hide();
+                    $('#D__ID input[name=pqair_mucus_3m]').prop('required',false);
+                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
+                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                }
+            })
+            //------------------------------------
+            $('#D__ID input[name=pqair_pip]').on('change',function(){
+                if($('#D__ID input[name=pqair_pip]:checked').val()=='1'){
+                    $('#h_pqair_pip__ID').show()
+                    $('#D__ID input[name=pqair_pip_first]').prop('required',true);
+                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_pip__ID').hide();
+                    $('#D__ID input[name=pqair_pip_first]').prop('required',false);
+                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',true);
+                }
+            })
+            //------------------------------------
+            $('#D__ID input[name=pqair_smo]').on('change',function(){
+                if($('#D__ID input[name=pqair_smo]:checked').val()=='1' || $('#D__ID input[name=pqair_smo_ex]:checked').val()=='1'){
+                    $('#h_pqair_smo__ID').show()
+                    $('#D__ID input[name=pqair_smo_cigg]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_ciga]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_pipe]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_start]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_years]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_end]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_smo__ID').hide();
+                    $('#D__ID input[name=pqair_smo_cigg]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_ciga]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_pipe]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_start]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_years]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_end]').prop('required',false);
+                }
+            })
+            //------------------------------------
+            $('#D__ID input[name=pqair_smo_ex]').on('change',function(){
+                if($('#D__ID input[name=pqair_smo]:checked').val()=='1' || $('#D__ID input[name=pqair_smo_ex]:checked').val()=='1'){
+                    $('#h_pqair_smo__ID').show()
+                    $('#D__ID input[name=pqair_smo_cigg]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_ciga]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_pipe]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_start]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_years]').prop('required',true);
+                    $('#D__ID input[name=pqair_smo_end]').prop('required',true);
+                }
+                else {
+                    $('#h_pqair_smo__ID').hide();
+                    $('#D__ID input[name=pqair_smo_cigg]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_ciga]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_pipe]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_start]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_years]').prop('required',false);
+                    $('#D__ID input[name=pqair_smo_end]').prop('required',false);
+                }
+            })
+            //------------------------------------
         }
     </script>
     <style>
