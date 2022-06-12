@@ -41,6 +41,8 @@
     m[p+"mmrc-form"] ={url:H+"/form-grid/questionnaires/mmrc-form.html",Table:"crs-kol-mmrc", task_name:"MMRC" };
     m[p+"hads-data"] ={url:H+"/form-grid/questionnaires/hads-data.html",Table:"crs-kol-hads",form_module:"hads-form", task_name:"HAD SJÄLVSKATTNINGSFORMULÄR" };
     m[p+"hads-form"] ={url:H+"/form-grid/questionnaires/hads-form.html",Table:"crs-kol-hads", task_name:"HAD SJÄLVSKATTNINGSFORMULÄR" };
+    m[p+"munhalsa-data"] ={url:H+"/form-grid/questionnaires/munhalsa-data.html",Table:"crs-kol-munhalsa",form_module:"munhalsa-form", task_name:"MUNHÄLSA" };
+    m[p+"munhalsa-form"] ={url:H+"/form-grid/questionnaires/munhalsa-form.html",Table:"crs-kol-munhalsa", task_name:"MUNHÄLSA" };
 
     m[p+"isi-bl-data"]      ={url:H+"/form-grid/questionnaires/isi-bl-data.html",Table:"crs-kol-screening",form_module:"isi-bl-form", task_name:"Baseline - Insomnia Severity Index" };
     m[p+"isi-bl-form"]      ={url:H+"/form-grid/questionnaires/isi-form.html",Table:"crs-kol-screening", task_name:"Baseline - Insomnia Severity Index" };

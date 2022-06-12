@@ -18,11 +18,6 @@
             }
             m.cell_render=function(records,I,field,td,set_value,source){
                 switch(field){
-                    case 'contact':
-                        if(records[I].Data.contact==1) td.html("Text");
-                        else if(records[I].Data.contact==2) td.html("Email");
-                        else if(records[I].Data.contact==3) td.html("Both");
-                        break;
                     case '_Participant_ID':
                         td.html(records[I].UID);
                         break;
