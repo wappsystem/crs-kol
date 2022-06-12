@@ -31,6 +31,16 @@
     m[p+"nas-vas-form"] ={url:H+"/form-grid/questionnaires/nas-vas-form.html",Table:"crs-kol-nas-vas", task_name:"NÄS-VAS" };
     m[p+"luftvagsformular-data"] ={url:H+"/form-grid/questionnaires/luftvagsformular-data.html",Table:"crs-kol-luftvagsformular",form_module:"luftvagsformular-form", task_name:"Luftvägsformulär" };
     m[p+"luftvagsformular-form"] ={url:H+"/form-grid/questionnaires/luftvagsformular-form.html",Table:"crs-kol-luftvagsformular", task_name:"Luftvägsformulär" };
+    m[p+"snot-22-data"] ={url:H+"/form-grid/questionnaires/snot-22-data.html",Table:"crs-kol-snot-22",form_module:"snot-22-form", task_name:"SNOT - 22" };
+    m[p+"snot-22-form"] ={url:H+"/form-grid/questionnaires/snot-22-form.html",Table:"crs-kol-snot-22", task_name:"SNOT - 22" };
+    m[p+"sf36-data"] ={url:H+"/form-grid/questionnaires/sf36-data.html",Table:"crs-kol-sf36",form_module:"sf36-form", task_name:"SF - 36" };
+    m[p+"sf36-form"] ={url:H+"/form-grid/questionnaires/sf36-form.html",Table:"crs-kol-sf36", task_name:"SF - 36" };
+    m[p+"cat-data"] ={url:H+"/form-grid/questionnaires/cat-data.html",Table:"crs-kol-cat",form_module:"cat-form", task_name:"HUR UPPLEVER DU DIN KOL? – COPD ASSESSMENT TEST (CAT)" };
+    m[p+"cat-form"] ={url:H+"/form-grid/questionnaires/cat-form.html",Table:"crs-kol-cat", task_name:"HUR UPPLEVER DU DIN KOL? – COPD ASSESSMENT TEST (CAT)" };
+    m[p+"mmrc-data"] ={url:H+"/form-grid/questionnaires/mmrc-data.html",Table:"crs-kol-mmrc",form_module:"mmrc-form", task_name:"MMRC" };
+    m[p+"mmrc-form"] ={url:H+"/form-grid/questionnaires/mmrc-form.html",Table:"crs-kol-mmrc", task_name:"MMRC" };
+    m[p+"hads-data"] ={url:H+"/form-grid/questionnaires/hads-data.html",Table:"crs-kol-hads",form_module:"hads-form", task_name:"HAD SJÄLVSKATTNINGSFORMULÄR" };
+    m[p+"hads-form"] ={url:H+"/form-grid/questionnaires/hads-form.html",Table:"crs-kol-hads", task_name:"HAD SJÄLVSKATTNINGSFORMULÄR" };
 
     m[p+"isi-bl-data"]      ={url:H+"/form-grid/questionnaires/isi-bl-data.html",Table:"crs-kol-screening",form_module:"isi-bl-form", task_name:"Baseline - Insomnia Severity Index" };
     m[p+"isi-bl-form"]      ={url:H+"/form-grid/questionnaires/isi-form.html",Table:"crs-kol-screening", task_name:"Baseline - Insomnia Severity Index" };
