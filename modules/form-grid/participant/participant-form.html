@@ -3,13 +3,47 @@
         <form id=F__ID>
             <div id=quest1__ID style='max-width:800px;margin-left:auto;margin-right:auto;'>
                 <div class="form-group box">
-                    <h3>Participant's Details</h3>
+                    <h3>Subject's Details</h3>
                     <fieldset class="subquestions">
-                        <label><span class="">Participant ID</span>
-                            <input type=text class=form-control id=record__ID readonly>
-                        </label>
                     </fieldset>
-
+                    <div class='row px-4'>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label><span class="">Record ID</span>
+                                <input type=text class=form-control id=record__ID readonly>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label class=''><span class=''>Gender</span><br>
+                                <select class="form-control" name="gender">
+                                    <option></option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label class=''><span class=''>Date of birth</span>
+                                <input type=date class=form-control name=dob>
+                            </label>
+                        </div>
+                    </div>
+                    <div class='row px-4'>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label class=''><span class=''>Subject ID number (FP-nr)</span>
+                                <input type=text class=form-control name=subjectid>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 row_participant__ID">
+                            <label class=''><span class=''>Randomisation Number</span>
+                                <input type=text class=form-control name=Randomisation_Number readonly placeholder='click here to randomise'>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 row_participant__ID">
+                            <label class=''><span class=''>Randomised by</span>
+                                <input type=text class=form-control name=Randomised_by readonly>
+                            </label>
+                        </div>
+                    </div>
                     <div class='row px-4'>
                         <div class="col-sm-12 col-lg-4 ">
                             <label class=''><span class=''>Password</span>
@@ -17,25 +51,25 @@
                             </label>
                         </div>
                         <div class="col-sm-12 col-lg-4 ">
-                            <label class=''><span class=''>Access Code</span>
-                                <input type=text class=form-control name=access_code>
+                            <label class=''><span class=''>Year of birth</span>
+                                <input type=number class=form-control name=yob>
                             </label>
                         </div>
                     </div>
                     <div class='row px-4'>
-                        <div class="col-sm-12 col-lg-4 row_participant__ID">
-                            <label class=''><span class=''>Randomisation Number</span>
-                                <input type=text class=form-control name=Randomisation_Number readonly placeholder='click here to randomise'>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label class=''><span class=''>Date of visit<br>ONH</span>
+                                <input type=date class=form-control name=v1ONH >
                             </label>
                         </div>
-                        <div class="col-sm-12 col-lg-4 row_participant__ID">
-                            <label class=''><span class=''>Group</span>
-                                <input type=text class=form-control name=Group readonly>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label class=''><span class=''>Date of visit<br>Odontologen</span>
+                                <input type=date class=form-control name=v1CT >
                             </label>
                         </div>
-                        <div class="col-sm-12 col-lg-4 row_participant__ID">
-                            <label class=''><span class=''>Randomised by</span>
-                                <input type=text class=form-control name=Randomised_by readonly>
+                        <div class="col-sm-12 col-lg-4 ">
+                            <label class=''><span class=''>Date of visit<br>Lungfunktionsundersökning</span>
+                                <input type=date class=form-control name=v1KOL >
                             </label>
                         </div>
                     </div>
@@ -64,6 +98,11 @@
 					$('.row_participant__ID').show()
 					$('#record__ID').val(m.input.record.UID)
 				}
+                //--------------
+                if ($('[type="date"]').prop('type') != 'date') {
+                    $('[type="date"]').datepicker();
+                }
+                //--------------
 			}
 			//-------------------------------------
 			$('#F__ID input[name=Randomisation_Number]').on('click', function () {
@@ -87,28 +126,6 @@
 			//-------------------------------------
 			m.before_submit = function (data, index) {
 				var I1 = $('#F__ID input[name=Randomisation_Number').val(); if (I1 != '' && I1 != '-') index.I1 = parseInt(I1);
-				var nd=new Date()
-				index.I2=nd.getFullYear()+"-"+$vm.pad(nd.getMonth()+1,2)+"-"+$vm.pad(nd.getDate(),2);
-                jQuery.ajaxSetup({ async: false });
-                    var tb = $vm.module_list["randomisation-table-data"].Table;
-                    var query={UID:index.I1}
-                    $vm.request({ cmd: "find", table: tb,query:query, limit:1 }, function (res) {
-                        if (res.result.length != 0) {
-                            //console.log(JSON.stringify(res.result[0].Data.Group))
-                            data.Group=res.result[0].Data.Group;
-                            index.I3=res.result[0].Data.Group;
-                            //if(index.I3=="Control") data.Start_Date=index.I2;
-                        }
-                    });
-                    var tb = $vm.module_list["access-code-data"].Table;
-                    var query={UID:index.I1}
-                    $vm.request({ cmd: "find", table: tb,query:query, limit:1 }, function (res) {
-                        if (res.result.length != 0) {
-                            //console.log(JSON.stringify(res.result[0].Data.Group))
-                            data.access_code=res.result[0].Data.access_code;
-                        }
-                    });
-                jQuery.ajaxSetup({ async: true });
 			}
 			//-------------------------------------
             m.after_update = function (data,index) {

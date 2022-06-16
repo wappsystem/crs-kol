@@ -9,7 +9,7 @@
             //-------------------------------------
             $('#title__ID').text('Participants');            
             //-------------------------------------
-            var fields="_Participant_ID,Randomisation_Number,Group,first_name,last_name,phone,email,contact,Access Code|access_code,_Data_Entry,_Quest_BL,_Quest_W0,_Quest_W3,_Quest_W8,_Quest_W16,_Quest_W26,_Login_ID,_Password";
+            var fields="_Participant_ID,Subject_ID|subjectid,Randomisation_Number,gender,dob,yob,v1ONH,v1CT,v1KOL,_Data_Entry,_Questionnaire,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.load=function(){
@@ -34,75 +34,15 @@
     						$vm.load_module(m.questionnaire_setup,'',{record:records[I]});
                         });
                         break;
-                    case '_Quest_BL':
+                    case '_Questionnaire':
                         //MongoDB
-                        td.html("<u style='cursor:pointer'>Baseline</u>");
+                        td.html("<u style='cursor:pointer'>Frågeformulär</u>");
                         td.find('u').on('click',function(){
                             var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                             var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
                             var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
                             var q_url=$vm.module_list[m.online_questionnaire_bl].url+u+db+d+p;
-    						window.open(q_url);
-                        });
-                        break;
-                        case '_Quest_W0':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Week 0</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            var q_url=$vm.module_list[m.online_questionnaire_w0].url+u+db+d+p;
-    						window.open(q_url);
-                        });
-                        break;
-                        case '_Quest_W3':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Week 3</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            var q_url=$vm.module_list[m.online_questionnaire_w3].url+u+db+d+p;
-    						window.open(q_url);
-                        });
-                        break;
-                        case '_Quest_W8':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Week 8</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            var q_url=$vm.module_list[m.online_questionnaire_w8].url+u+db+d+p;
-    						window.open(q_url);
-                        });
-                        break;
-                        case '_Quest_W16':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Week 16</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            var q_url=$vm.module_list[m.online_questionnaire_w16].url+u+db+d+p;
-    						window.open(q_url);
-                        });
-                        break;
-                        case '_Quest_W26':
-                        //MongoDB
-                        td.html("<u style='cursor:pointer'>Week 26</u>");
-                        td.find('u').on('click',function(){
-                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
-                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
-                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
-                            var q_url=$vm.module_list[m.online_questionnaire_w26].url+u+db+d+p;
     						window.open(q_url);
                         });
                         break;

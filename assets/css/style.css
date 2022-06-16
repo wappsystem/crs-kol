@@ -459,23 +459,6 @@ textarea {
 #D__ID .main {
     flex-grow: 1;
 }
-#D__ID .container,
-#D__ID .main-content {
-    max-width: 1177px;
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
-}
-#D__ID .container-xs {
-    max-width: 743px;
-}
-#D__ID .container-sm {
-    max-width: 878px;
-}
-#D__ID .container-lg,
-#D__ID .main-content {
-    max-width: 1178px;
-}
 #D__ID .text-transparent {
     opacity: 0.8;
 }
