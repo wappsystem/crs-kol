@@ -1,0 +1,92 @@
+<div id=D__ID>
+    <!--third html start -->
+    <div class="container mt-95 mb-3">
+        <div class="row">
+            <!-- form container start -->
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 mx-auto formbox">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- form start -->
+                        <form id="F__ID">
+                            <h3 id="title__ID"></h3>
+                            <!-- participant part for all tsak forms -------------------->
+                            <div id="participant_div__ID">
+                                <div class="form-group">
+                                    <fieldset class="subquestions">
+                                        <label><span class="">Participant</span>
+                                            <input type=text name="Participant" class=form-control id=Participant__ID
+                                                data-id="Participant" />
+                                        </label><br>
+                                        <label><span class="">Participant ID</span>
+                                            <input type=text name="Participant_uid" class=form-control readonly />
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <!-- form group -->
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">B-Hb (g/L)</span><input type=number class=form-control step="0.01" name=lab_hb></label></div>
+                                            <div class="col-sm-3"><label><span class="">B-CRP</span><input type=number class=form-control step="0.01" name=lab_crp></label></div>
+                                            <div class="col-sm-3"><label><span class="">B-LPK (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_lpk></label></div>
+                                            <div class="col-sm-3"><label><span class="">B-neutrofila (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_n></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">B-lymfocyter (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_l></label></div>
+                                            <div class="col-sm-3"><label><span class="">B-monocyter (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_m></label></div>
+                                            <div class="col-sm-3"><label><span class="">B-basofila (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_b></label></div>
+                                            <div class="col-sm-3"><label><span class="">B-Eosinofila (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_e></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <label>B-phadiatop</label>
+                                    <fieldset class="subquestions">
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="lab_phadiatop" value="0" >
+                                            <span class="checkmark"></span> Nej</label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="lab_phadiatop" value="1">
+                                            <span class="checkmark"></span> Ja</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function F__ID() {
+            //-------------------------------------
+            /*VmInclude:__COMPONENT__/f/form.01.js*/
+            /*VmInclude:__HOST__/assets/js/shared-form.js*/
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        #D__ID {
+            background-color: aliceblue;
+        }
+
+        #D__ID .mt-95 {
+            max-width: 600px;
+        }
+
+        /*VmInclude:__HOST__/assets/css/wappsystem-form copy.css*/
+    </style>
+</div>

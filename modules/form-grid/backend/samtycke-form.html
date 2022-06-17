@@ -1,0 +1,121 @@
+<div id=D__ID>
+    <!--third html start -->
+    <div class="container mt-95 mb-3">
+        <div class="row">
+            <!-- form container start -->
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 mx-auto formbox">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- form start -->
+                        <form id="F__ID">
+                            <h3 id="title__ID"></h3>
+                            <!-- participant part for all tsak forms -------------------->
+                            <div id="participant_div__ID">
+                                <div class="form-group">
+                                    <fieldset class="subquestions">
+                                        <label><span class="">Participant</span>
+                                            <input type=text name="Participant" class=form-control id=Participant__ID
+                                                data-id="Participant" />
+                                        </label><br>
+                                        <label><span class="">Participant ID</span>
+                                            <input type=text name="Participant_uid" class=form-control readonly />
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <!-- form group -->
+                            <div class="form-group">
+                                <h4>Har deltagaren signerat informerat samtycke avseende deltagande i CRS-KOL-studien?
+                                </h4>
+                                <div class="questiongroup ">
+                                    <fieldset class="subquestions">
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_sign" value="0" >
+                                            <span class="checkmark"></span> Nej</label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_sign" value="1">
+                                            <span class="checkmark"></span> Ja</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>Deltagaren godkänner lagring av prover i biobank?</h4>
+                                <div class="questiongroup ">
+                                    <fieldset class="subquestions">
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_bb" value="0" >
+                                            <span class="checkmark"></span> Nej</label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_bb" value="1">
+                                            <span class="checkmark"></span> Ja</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>Deltagaren godkänner samkörning mot nationella register?</h4>
+                                <div class="questiongroup ">
+                                    <fieldset class="subquestions">
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_reg" value="0" >
+                                            <span class="checkmark"></span> Nej</label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_reg" value="1">
+                                            <span class="checkmark"></span> Ja</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>Deltagaren godkänner samkörning mot nationella register?</h4>
+                                <div class="questiongroup ">
+                                    <fieldset class="subquestions">
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_othst" value="0" >
+                                            <span class="checkmark"></span> Nej</label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_othst" value="1">
+                                            <span class="checkmark"></span> Ja</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>Behöver försökspersonen tolk?</h4>
+                                <div class="questiongroup ">
+                                    <fieldset class="subquestions">
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_transl" value="0" >
+                                            <span class="checkmark"></span> Nej</label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="ic_transl" value="1">
+                                            <span class="checkmark"></span> Ja</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function F__ID() {
+            //-------------------------------------
+            /*VmInclude:__COMPONENT__/f/form.01.js*/
+            /*VmInclude:__HOST__/assets/js/shared-form.js*/
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        #D__ID {
+            background-color: aliceblue;
+        }
+
+        #D__ID .mt-95 {
+            max-width: 600px;
+        }
+
+        /*VmInclude:__HOST__/assets/css/wappsystem-form copy.css*/
+    </style>
+</div>

@@ -44,9 +44,14 @@
     m[p+"munhalsa-data"] ={url:H+"/form-grid/questionnaires/munhalsa-data.html",Table:"crs-kol-munhalsa",form_module:"munhalsa-form", task_name:"MUNHÄLSA" };
     m[p+"munhalsa-form"] ={url:H+"/form-grid/questionnaires/munhalsa-form.html",Table:"crs-kol-munhalsa", task_name:"MUNHÄLSA" };
 
-    m[p+"isi-bl-data"]      ={url:H+"/form-grid/questionnaires/isi-bl-data.html",Table:"crs-kol-screening",form_module:"isi-bl-form", task_name:"Baseline - Insomnia Severity Index" };
-    m[p+"isi-bl-form"]      ={url:H+"/form-grid/questionnaires/isi-form.html",Table:"crs-kol-screening", task_name:"Baseline - Insomnia Severity Index" };
+    m[p+"samtycke-data"] ={url:H+"/form-grid/backend/samtycke-data.html",Table:"crs-kol-samtycke",form_module:"samtycke-form", task_name:"Samtycke" };
+    m[p+"samtycke-form"] ={url:H+"/form-grid/backend/samtycke-form.html",Table:"crs-kol-samtycke", task_name:"samtycke" };
+    m[p+"lab-data"] ={url:H+"/form-grid/backend/lab-data.html",Table:"crs-kol-lab",form_module:"lab-form", task_name:"Laboratorie resultat" };
+    m[p+"lab-form"] ={url:H+"/form-grid/backend/lab-form.html",Table:"crs-kol-lab", task_name:"Laboratorie resultat" };
+    m[p+"spirometri-data"] ={url:H+"/form-grid/backend/spirometri-data.html",Table:"crs-kol-spirometri",form_module:"spirometri-form", task_name:"Spirometri" };
+    m[p+"spirometri-form"] ={url:H+"/form-grid/backend/spirometri-form.html",Table:"crs-kol-spirometri", task_name:"Spirometri" };
 
+    
     m[p+"psqi-bl-data"]      ={url:H+"/form-grid/questionnaires/psqi-data.html",Table:"crs-kol-psqi-bl",form_module:"psqi-bl-form", task_name:"Baseline - Pittsburgh Sleep Quality Index" };
     m[p+"psqi-bl-form"]      ={url:H+"/form-grid/questionnaires/psqi-form.html",Table:"crs-kol-psqi-bl", task_name:"Baseline - Pittsburgh Sleep Quality Index" };
     m[p+"phq-bl-data"]      ={url:H+"/form-grid/questionnaires/phq-data.html",Table:"crs-kol-phq-bl",form_module:"phq-bl-form", task_name:"Baseline - Patient Health Questionnaire" };
