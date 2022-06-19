@@ -8,23 +8,17 @@
     //-------------------------------------------------------------------------------------
     m[p+"participant-data"] ={url:H+"/form-grid/participant/participant-data.html",Table:"crs-kol-participant"
                             ,form_module:"participant-form",
-                            child_panel:"panel-child",
-                            online_questionnaire_bl:"oq-bl",
-                            online_questionnaire_w0:"oq-w0",
-                            online_questionnaire_w3:"oq-w3",
-                            online_questionnaire_w8:"oq-w8",
-                            online_questionnaire_w16:"oq-w16",
-                            online_questionnaire_w26:"oq-w26",
-                            
-                            
+                            child_panel:"child-panel",
+                            online_questionnaire_bl:"oq",
     };                   
     m[p+"participant-form"] ={url:H+"/form-grid/participant/participant-form.html",Table:"crs-kol-participant"},
     m[p+"notes-data"]       ={url:H+"/form-grid/questionnaires/notes-data.html",Table:"crs-kol-notes",form_module:"notes-form",router:1},
     m[p+"notes-form"]       ={url:H+"/form-grid/questionnaires/notes-form.html",Table:"crs-kol-notes"},
-    m[p+"oq-bl"] ={url:I+"/bl_quest.html"},
-    m[p+"oq"] ={url:I+"/participant.html"},
+    m[p+"oq"] ={url:I+"/quest.html"},
+    //m[p+"oq"] ={url:I+"/participant.html"},
 
     m[p+"main-panel"]    ={url:H+"/panels/main.html", };
+    m[p+"child-panel"]    ={url:H+"/panels/child.html", };
     m[p+"quest-panel"]     ={url:H+"/panels/quest.html"};
     
     m[p+"nas-vas-data"] ={url:H+"/form-grid/questionnaires/nas-vas-data.html",Table:"crs-kol-nas-vas",form_module:"nas-vas-form", task_name:"NÄS-VAS" };
@@ -50,6 +44,18 @@
     m[p+"lab-form"] ={url:H+"/form-grid/backend/lab-form.html",Table:"crs-kol-lab", task_name:"Laboratorie resultat" };
     m[p+"spirometri-data"] ={url:H+"/form-grid/backend/spirometri-data.html",Table:"crs-kol-spirometri",form_module:"spirometri-form", task_name:"Spirometri" };
     m[p+"spirometri-form"] ={url:H+"/form-grid/backend/spirometri-form.html",Table:"crs-kol-spirometri", task_name:"Spirometri" };
+    m[p+"langd-vikt-data"] ={url:H+"/form-grid/backend/langd-vikt-data.html",Table:"crs-kol-langd-vikt",form_module:"langd-vikt-form", task_name:"Längd och vikt" };
+    m[p+"langd-vikt-form"] ={url:H+"/form-grid/backend/langd-vikt-form.html",Table:"crs-kol-langd-vikt", task_name:"Längd och vikt" };
+    m[p+"fiberskopi-data"] ={url:H+"/form-grid/backend/fiberskopi-data.html",Table:"crs-kol-fiberskopi",form_module:"fiberskopi-form", task_name:"Fiberskopi" };
+    m[p+"fiberskopi-form"] ={url:H+"/form-grid/backend/fiberskopi-form.html",Table:"crs-kol-fiberskopi", task_name:"Fiberskopi" };
+    m[p+"rhinomanometri-data"] ={url:H+"/form-grid/backend/rhinomanometri-data.html",Table:"crs-kol-rhinomanometri",form_module:"rhinomanometri-form", task_name:"Rhinomanometri" };
+    m[p+"rhinomanometri-form"] ={url:H+"/form-grid/backend/rhinomanometri-form.html",Table:"crs-kol-rhinomanometri", task_name:"Rhinomanometri" };
+    m[p+"akustisk-rhinomanometri-data"] ={url:H+"/form-grid/backend/akustisk-rhinomanometri-data.html",Table:"crs-kol-akustisk-rhinomanometri",form_module:"akustisk-rhinomanometri-form", task_name:"Akustisk rhinomanometri" };
+    m[p+"akustisk-rhinomanometri-form"] ={url:H+"/form-grid/backend/akustisk-rhinomanometri-form.html",Table:"crs-kol-akustisk-rhinomanometri", task_name:"Akustisk rhinomanometri" };
+    m[p+"cbct-data"] ={url:H+"/form-grid/backend/cbct-data.html",Table:"crs-kol-cbct",form_module:"cbct-form", task_name:"CBCT" };
+    m[p+"cbct-form"] ={url:H+"/form-grid/backend/cbct-form.html",Table:"crs-kol-cbct", task_name:"CBCT" };
+    m[p+"derived-data"] ={url:H+"/form-grid/backend/derived-data.html",Table:"crs-kol-derived",form_module:"derived-form", task_name:"DERIVED" };
+    m[p+"derived-form"] ={url:H+"/form-grid/backend/derived-form.html",Table:"crs-kol-derived", task_name:"DERIVED" };
 
     
     m[p+"psqi-bl-data"]      ={url:H+"/form-grid/questionnaires/psqi-data.html",Table:"crs-kol-psqi-bl",form_module:"psqi-bl-form", task_name:"Baseline - Pittsburgh Sleep Quality Index" };

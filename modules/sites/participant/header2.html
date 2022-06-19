@@ -1,0 +1,29 @@
+<div id=D__ID>
+    <div id=layout__ID>
+        <div id=left__ID style='margin:auto 10px'>
+            <a id=desk_logo__ID href="home" style='color:#fff;text-decoration: none;'>
+                <div id=logo>
+                    <span id=logo_a>CRS-KOL</span><br>
+                    <span id=logo_b>Studie</span>
+                </div>
+            </a>
+        </div>
+            <div style="width:200px">
+                <a href="" id=vm_signout onclick=$vm.auth_signout() class="btn btn-primary"> Sign Out</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        //------------------------------------
+        $('#vm-mobile_title').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
+        $('.vm-desk-logo').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
+        //------------------------------------
+        $vm.header_ready=1;
+        $('#vm_signout').hide();
+
+        //------------------------------------
+    </script>
+    <style>
+        /*VmInclude:__HOST__/assets/css/style.css*/
+    </style>
+</div>

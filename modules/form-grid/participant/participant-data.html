@@ -24,7 +24,7 @@
                     case '_Data_Entry':
                         td.html("<u style='cursor:pointer'>Data Entry</u>");
                         td.find('u').on('click',function(){
-                            //console.log(JSON.stringify(records[I]))
+                            console.log(JSON.stringify(records[I]))
     						$vm.load_module(m.child_panel,'',{record:records[I]});
                         });
                         break;

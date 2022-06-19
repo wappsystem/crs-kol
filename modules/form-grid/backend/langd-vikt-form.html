@@ -1,0 +1,76 @@
+<div id=D__ID>
+    <!--third html start -->
+    <div class="container mt-95 mb-3">
+        <div class="row">
+            <!-- form container start -->
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 mx-auto formbox">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- form start -->
+                        <form id="F__ID">
+                            <h3 id="title__ID"></h3>
+                            <!-- participant part for all tsak forms -------------------->
+                            <div id="participant_div__ID">
+                                <div class="form-group">
+                                    <fieldset class="subquestions">
+                                        <label><span class="">Participant</span>
+                                            <input type=text name="Participant" class=form-control id=Participant__ID
+                                                data-id="Participant" />
+                                        </label><br>
+                                        <label><span class="">Participant ID</span>
+                                            <input type=text name="Participant_uid" class=form-control readonly />
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <!-- form group -->
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">Längd (cm)</span><input type=number class=form-control step="0.1" name=cli_height></label></div>
+                                            <div class="col-sm-3"><label><span class="">Vikt (kg)</span><input type=number class=form-control step="0.1" name=cli_weight></label></div>
+                                            <div class="col-sm-3"><label><span class="">BMI (kg/m&sup2;)</span><input type=number class=form-control step="0.01" name=cli_bmi></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function F__ID() {
+            //-------------------------------------
+            /*VmInclude:__COMPONENT__/f/form.01.js*/
+            /*VmInclude:__HOST__/assets/js/shared-form.js*/
+            //-------------------------------------
+            //-------------------------------------
+            $('#F__ID input[name=cli_height]').on('change', function () { cal(); })
+            $('#F__ID input[name=cli_weight]').on('change', function () { cal(); })
+            var cal = function () {
+                var h = $('#F__ID input[name=cli_height]').val() / 100;
+                var w = $('#F__ID input[name=cli_weight]').val();
+                var b = (w / (h * h)).toFixed(2);
+                $('#F__ID input[name=cli_bmi]').val(b);
+            }
+
+        }
+    </script>
+    <style>
+        #D__ID {
+            background-color: aliceblue;
+        }
+
+        #D__ID .mt-95 {
+            max-width: 600px;
+        }
+
+        /*VmInclude:__HOST__/assets/css/wappsystem-form copy.css*/
+    </style>
+</div>

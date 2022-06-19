@@ -20,6 +20,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>   
         <script src="https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>   
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.5.0/jsoneditor.min.js"></script>   
+        <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans|Roboto+Slab' />
         <script>$vm={};</script>
     </head>
     <body>
@@ -31,14 +32,14 @@
         <!----------------------------------------------->
         <script app code>
             //---------------------------------------------
-            $VmAPI={};$vm.ver=[0.23,0.02]; $vm['jquery-ui-min-js']=1;
+            $VmAPI={};$vm.ver=[0.01,0.01]; $vm['jquery-ui-min-js']=1;
             $vm.flexindex=new FlexSearch({  doc: {id: "id",field: ["title","contents"]}    });
             $vm.hosting_path=window.location.href.substring(0, window.location.href.split('?')[0].lastIndexOf('/'));
             //---------------------------------------------
             $vm.module_list={
                 header:         {url:$vm.hosting_path+"/modules/sites/participant/header.html"},
                 footer:         {url:$vm.hosting_path+"/modules/sites/participant/footer.html"},
-                home:           {url:$vm.hosting_path+"/modules/sites/participant/home_bl.html",Table:"asteroid-partb-participant",router:1},
+                home:           {url:$vm.hosting_path+"/modules/sites/participant/home.html",Table:"crs-kol-participant",router:1},
                 //auth:           {url:$vm.hosting_path+"/modules/system/auth.html"},
                 
                 //query:          {url:$vm.hosting_path+"/modules/system/query.html"},
@@ -95,8 +96,9 @@
                 
                 if(m_name!=undefined){ $vm.active_id=$vm.module_list[m_name].id; $vm.active_name=m_name; }
                 if($vm.active_id!='') $('#D'+$vm.active_id).css('min-height',$vm.min_height+"px");
-                //if(m_name=='home') {$("#header").css("background","rgba(0,0,0,0)"); $('#midi_buttons').show(); $('#g_nav').hide(); }
-                //else               {$("#header").css("background","rgba(0,0,0,0.8)");  $('#midi_buttons').hide(); $('#g_nav').show();}
+                if(m_name=='home') {$("#header").css("background","rgba(28,35,80)");; $('#midi_buttons').show(); $('#g_nav').hide(); }
+                else               {$("#header").css("background","rgba(28,35,80,0.8)");  $('#midi_buttons').hide(); $('#g_nav').show();}
+                //$("#header").css("background","rgba(28,35,80,0.8)");
             }
             //---------------------------------------------
             document.getElementById('layout').onscroll = function(){

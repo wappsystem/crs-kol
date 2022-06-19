@@ -1,8 +1,8 @@
 //-------------------------------------
-var participant_name=function(record){ return record.UID;}
+var participant_name=function(record){ return record.Data.subjectid;}
 //-------------------------------------
 //auto select particpant
-//var part_id1=$vm.module_list['participant-data'].participant_id.field1;
+//var part_id1=undefined; //$vm.module_list['participant-data'].participant_id.subjectid;
 //var part_id2=$vm.module_list['participant-data'].participant_id.field2;
 //var part_id3=$vm.module_list['participant-data'].participant_id.field3;
 var autocomplete_req_p={cmd:"find",table:$vm.module_list['participant-data'].Table,options:{},skip:0,limit:10}
@@ -11,10 +11,7 @@ var autocomplete_list_p=function(records){
     var items=[];
     for(var i=0;i<records.length;i++){
         var obj={};
-        if(records[i].Data[part_id1]!= undefined ) obj.label=records[i].Data[part_id1];
-        else obj.label=records[i].UID;
-        if(records[i].Data[part_id2]!= undefined ) obj.label+=' - '+records[i].Data[part_id2];
-        if(records[i].Data[part_id3]!= undefined ) obj.label+=' - '+records[i].Data[part_id3];
+        obj.label=records[i].Data.subjectid;
         obj['UID']=records[i].UID;
         items.push(obj);
     }

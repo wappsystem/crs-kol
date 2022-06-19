@@ -1,36 +1,30 @@
 <div id=D__ID>
     <div id="footer">
-        <footer class="footer">
             <div class="container">
-                <div class="footer-inner">
-                    <div class="footer-logos">
-                        <div class="logo">
-                            <a href="#">
-                                <img src="assets/images/logo.png" alt="SleepFix" />
-                            </a>
-                        </div>
-                        <div class="logo">
-                            <a href="#">
-                                <img src="assets/images/woolcock.png" alt="Woolcock" />
-                            </a>
-                        </div>
-                        <div class="logo">
-                            <a href="#">
-                                <img src="assets/images/logo-brand-02.png" alt="The University of Sydney" />
-                            </a>
-                        </div>
-                    </div>
-                    <p>Woolcock Institute of Medical Research Copyright © 2021.</p>
+                    <p  style="color:rgb(255, 255, 255)" >All rights reserved. The University of Gothenburg 2022. <a target="_blank" href="https://spardac.wappsystem.com.au">Powered by Wappsystem</a></p>
                 </div>
-            </div>
-        </footer>
-    </div>
+   </div>
     <script>
-        //------------------------------------
-        $vm.footer_ready = 1;
-        //------------------------------------
+        $vm.footer_ready=1;
+        if($vm.resize_content!=undefined) $vm.resize_content();
+        $('#D__ID').on('dblclick',function(event){
+            event.stopPropagation();
+            if (event.ctrlKey & event.altKey) {
+                var r=confirm("Click OK will refresh the browser to reinstall all modules.");
+                if(r){
+                    localStorage.clear();
+                    location.reload();
+                }
+            }
+	    });
+        $('#year__ID').text(new Date().getFullYear());
     </script>
     <style>
-        /*VmInclude:__HOST__/assets/css/style.css*/
+        #D__ID{
+            padding-left:15px;
+            background-color: #1c2350;
+            text-align: center;
+        }     
+        /*VmInclude:__HOST__/assets/css/style.css*/       
     </style>
 </div>

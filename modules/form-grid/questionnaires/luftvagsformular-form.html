@@ -284,7 +284,7 @@
                                     <h4 style="font-size:larger">12c. Hur gammal var du när dessa besvär började?</h4>
                                     <div class="questiongroup">
                                         <fieldset class="pl-4">
-                                            <input type="number" name="pqair_birthyear" class="form-control" placeholder="" required>
+                                            <input type="number" name="pqair_mucus_yold" class="form-control" placeholder="" required>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -479,13 +479,13 @@
                     $('#h_pqair_mucus__ID').show()
                     $('#D__ID input[name=pqair_mucus_3m]').prop('required',true);
                     $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
-                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                    $('#D__ID input[name=pqair_mucus_yold]').prop('required',true);
                 }
                 else {
                     $('#h_pqair_mucus__ID').hide();
                     $('#D__ID input[name=pqair_mucus_3m]').prop('required',false);
-                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
-                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',false);
+                    $('#D__ID input[name=pqair_mucus_yold]').prop('required',false);
                 }
                 //--------------
                 if($('#D__ID input[name=pqair_pip]:checked').val()=='1'){
@@ -496,7 +496,7 @@
                 else {
                     $('#h_pqair_pip__ID').hide();
                     $('#D__ID input[name=pqair_pip_first]').prop('required',false);
-                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',true);
+                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',false);
                 }
                 //--------------
                 if($('#D__ID input[name=pqair_smo]:checked').val()=='1' || $('#D__ID input[name=pqair_smo_ex]:checked').val()=='1'){
@@ -525,13 +525,13 @@
                     $('#h_pqair_mucus__ID').show()
                     $('#D__ID input[name=pqair_mucus_3m]').prop('required',true);
                     $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
-                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                    $('#D__ID input[name=pqair_mucus_yold]').prop('required',true);
                 }
                 else {
                     $('#h_pqair_mucus__ID').hide();
                     $('#D__ID input[name=pqair_mucus_3m]').prop('required',false);
-                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',true);
-                    $('#D__ID input[name=pqair_birthyear]').prop('required',true);
+                    $('#D__ID input[name=paqir_mucus_2y]').prop('required',false);
+                    $('#D__ID input[name=pqair_mucus_yold]').prop('required',false);
                 }
             })
             //------------------------------------
@@ -544,7 +544,7 @@
                 else {
                     $('#h_pqair_pip__ID').hide();
                     $('#D__ID input[name=pqair_pip_first]').prop('required',false);
-                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',true);
+                    $('#D__ID input[name=pqair_pip_year_last]').prop('required',false);
                 }
             })
             //------------------------------------

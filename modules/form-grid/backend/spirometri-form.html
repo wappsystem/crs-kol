@@ -26,39 +26,147 @@
                             <!-- form group -->
                             <div class="form-group">
                                 <div class="questiongroup ">
+                                    <div class=row>
+                                        <div class="col-sm-3">
+                                            <label>Är spirometri utförd?</label>
+                                            <fieldset class="subquestions">
+                                                <label class="radiobuttons">
+                                                    <input type="radio" name="spi_done" value="0" >
+                                                    <span class="checkmark"></span> Nej</label><br>
+                                                <label class="radiobuttons">
+                                                    <input type="radio" name="spi_done" value="1">
+                                                    <span class="checkmark"></span> Ja</label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>Kontraindikationer</label>
+                                            <fieldset class="subquestions">
+                                                <label class="radiobuttons">
+                                                    <input type="radio" name="spi_cind" value="0" >
+                                                    <span class="checkmark"></span> Nej</label><br>
+                                                <label class="radiobuttons">
+                                                    <input type="radio" name="spi_cind" value="1">
+                                                    <span class="checkmark"></span> Ja</label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <label>Pre bronchodilator</label>
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-3"><label><span class="">B-Hb (g/L)</span><input type=number class=form-control step="0.01" name=lab_hb></label></div>
-                                            <div class="col-sm-3"><label><span class="">B-CRP</span><input type=number class=form-control step="0.01" name=lab_crp></label></div>
-                                            <div class="col-sm-3"><label><span class="">B-LPK (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_lpk></label></div>
-                                            <div class="col-sm-3"><label><span class="">B-neutrofila (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_n></label></div>
+                                            <div class="col-sm-3"><label><span class="">Oxygen saturation</span><input type=number class=form-control step="0.01" name=spi_pre_osat></label></div>
+                                            <div class="col-sm-3"><label><span class="">DLco</span><input type=number class=form-control step="0.01" name=spi_pre_dlco></label></div>
+                                            <div class="col-sm-3"><label><span class="">DLco/VA</span><input type=number class=form-control step="0.01" name=spi_pre_dlcova></label></div>
+                                            <div class="col-sm-3"><label><span class="">TLC</span><input type=number class=form-control step="0.01" name=spi_pre_tlc></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="questiongroup ">
+                                    <label>Pre bronchodilator</label>
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-3"><label><span class="">B-lymfocyter (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_l></label></div>
-                                            <div class="col-sm-3"><label><span class="">B-monocyter (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_m></label></div>
-                                            <div class="col-sm-3"><label><span class="">B-basofila (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_b></label></div>
-                                            <div class="col-sm-3"><label><span class="">B-Eosinofila (x10*9/L)</span><input type=number class=form-control step="0.01" name=lab_diff_e></label></div>
+                                            <div class="col-sm-3"><label><span class="">FRC</span><input type=number class=form-control step="0.01" name=spi_pre_frc></label></div>
+                                            <div class="col-sm-3"><label><span class="">RV</span><input type=number class=form-control step="0.01" name=spi_pre_rv></label></div>
+                                            <div class="col-sm-3"><label><span class="">FEV1</span><input type=number class=form-control step="0.01" name=spi_pre_fev1></label></div>
+                                            <div class="col-sm-3"><label><span class="">FEV1 (pred)</span><input type=number class=form-control step="0.01" name=spi_pre_fev1p></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="questiongroup ">
-                                    <label>B-phadiatop</label>
+                                    <label>Pre bronchodilator</label>
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">FVC</span><input type=number class=form-control step="0.01" name=spi_pre_fvc></label></div>
+                                            <div class="col-sm-3"><label><span class="">SVC</span><input type=number class=form-control step="0.01" name=spi_pre_svc></label></div>
+                                            <div class="col-sm-3"><label><span class="">IC</span><input type=number class=form-control step="0.01" name=spi_pre_ic></label></div>
+                                            <div class="col-sm-3"><label><span class="">MEF50</span><input type=number class=form-control step="0.01" name=spi_pre_mef50></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <label>Pre bronchodilator</label>
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">FEV6</span><input type=number class=form-control step="0.01" name=spi_pre_fev6></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <label>Post bronchodilator</label>
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">FEV1</span><input type=number class=form-control step="0.01" name=spi_post_fev1></label></div>
+                                            <div class="col-sm-3"><label><span class="">FEV1 (pred)</span><input type=number class=form-control step="0.01" name=spi_post_fev1p></label></div>
+                                            <div class="col-sm-3"><label><span class="">FVC</span><input type=number class=form-control step="0.01" name=spi_post_fvc></label></div>
+                                            <div class="col-sm-3"><label><span class="">SVC</span><input type=number class=form-control step="0.01" name=spi_post_svc></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <label>Post bronchodilator</label>
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">IC</span><input type=number class=form-control step="0.01" name=spi_post_ic></label></div>
+                                            <div class="col-sm-3"><label><span class="">MEF50</span><input type=number class=form-control step="0.01" name=spi_post_mef50></label></div>
+                                            <div class="col-sm-3"><label><span class="">FEV6</span><input type=number class=form-control step="0.01" name=spi_post_fev6></label></div>
+                                            <div class="col-sm-3"><label><span class="">Oxygen saturation</span><input type=number class=form-control step="0.01" name=spi_post_osat></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <label>Slutbedömning</label>
                                     <fieldset class="subquestions">
                                         <label class="radiobuttons">
-                                            <input type="radio" name="lab_phadiatop" value="0" >
-                                            <span class="checkmark"></span> Nej</label><br>
+                                            <input type="radio" name="spi_summary" value="1" >
+                                            <span class="checkmark"></span> Normal
+                                        </label><br>
                                         <label class="radiobuttons">
-                                            <input type="radio" name="lab_phadiatop" value="1">
-                                            <span class="checkmark"></span> Ja</label>
+                                            <input type="radio" name="spi_summary" value="2" >
+                                            <span class="checkmark"></span> Icke normal
+                                        </label><br>
+                                        <label class="radiobuttons">
+                                            <input type="radio" name="spi_summary" value="3">
+                                            <span class="checkmark"></span> Svårbedömd
+                                        </label>
                                     </fieldset>
+                                </div>
+                            </div>
+                            <h3>PEX</h3>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <div class=row>
+                                        <div class="col-sm-3">
+                                            <label>Är PEX utförd?</label>
+                                            <fieldset class="subquestions">
+                                                <label class="radiobuttons">
+                                                    <input type="radio" name="spi_pex" value="0" >
+                                                    <span class="checkmark"></span> Nej</label><br>
+                                                <label class="radiobuttons">
+                                                    <input type="radio" name="spi_pex" value="1">
+                                                    <span class="checkmark"></span> Ja</label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <fieldset class="">
+                                                    <label><span class="">Pex Partikelantal</span><input type=number class=form-control step="1" name=spi_pex_n></label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">

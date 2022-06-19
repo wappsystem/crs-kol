@@ -1,10 +1,10 @@
 
 <div id=D__ID>
-	<div id=page__ID style="background-image: url(assets/images/bg-02.png)">
+	<div id=page__ID >
         <div class="container">
-            <div class="cta-inner" style="background-image: url(assets/images/bg-03.png)">
-              <div class="cta-text"><img src="assets/images/logo.png" alt="SleepFix">
-                <h2>Questionnaire Portal</h2>
+            <div class="cta-inner" >
+              <div class="cta-text">
+                <h2 style="font-family:Roboto Slab">Frågeformulär Entré</h2>
                 <p class="text-transparent text-lead">
                 </p>
                 <div class="btn-holder">
@@ -17,7 +17,7 @@
                     </div>
                         <br><span id="ErrMsg__ID" style='color:red'></span><br><br>
                     <div class="">
-                        <input id=signin__ID type=button value='Sign in' class="btn btn-primary" value="Sign In" />&nbsp;&nbsp;&nbsp;
+                        <input id=signin__ID type=button value='Logga in' class="btn btn-primary" value="Sign In" />&nbsp;&nbsp;&nbsp;
                     </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@
                     x.style.display = "block"
                     //console.log(x)
                     //console.log(JSON.stringify(res.result))
-                    $vm.load_module("bl-panel",'',{record:res.result});
+                    $vm.load_module("quest-panel",'',{record:res.result});
                 }
                 else{
                     $('#ErrMsg__ID').text("Invalid participant login ID or password.")
