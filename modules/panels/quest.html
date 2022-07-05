@@ -101,7 +101,9 @@
                     })
                     jQuery.ajaxSetup({async:true});
 		        }
+				$li.addClass('done');
 		        if(status[m].rid==0){
+					$li.removeClass('done');
 					$li.removeClass('li_not_allowed__ID')
 					$li.addClass('li_allowed__ID')
 		            var task_name=$li.html();

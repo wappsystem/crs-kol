@@ -21,8 +21,8 @@
     m[p+"child-panel"]    ={url:H+"/panels/child.html", };
     m[p+"quest-panel"]     ={url:H+"/panels/quest.html"};
     
-    m[p+"nas-vas-data"] ={url:H+"/form-grid/questionnaires/nas-vas-data.html",Table:"crs-kol-nas-vas",form_module:"nas-vas-form", task_name:"NÄS-VAS" };
-    m[p+"nas-vas-form"] ={url:H+"/form-grid/questionnaires/nas-vas-form.html",Table:"crs-kol-nas-vas", task_name:"NÄS-VAS" };
+    m[p+"nas-vas-data"] ={url:H+"/form-grid/questionnaires/nas-vas-data.html",Table:"crs-kol-nas-vas",form_module:"nas-vas-form",task_name:"NÄS-VAS" };
+    m[p+"nas-vas-form"] ={url:H+"/form-grid/questionnaires/nas-vas-form.html",Table:"crs-kol-nas-vas",progress:'nas-vas',task_name:"NÄS-VAS" };
     m[p+"luftvagsformular-data"] ={url:H+"/form-grid/questionnaires/luftvagsformular-data.html",Table:"crs-kol-luftvagsformular",form_module:"luftvagsformular-form", task_name:"Luftvägsformulär" };
     m[p+"luftvagsformular-form"] ={url:H+"/form-grid/questionnaires/luftvagsformular-form.html",Table:"crs-kol-luftvagsformular", task_name:"Luftvägsformulär" };
     m[p+"snot-22-data"] ={url:H+"/form-grid/questionnaires/snot-22-data.html",Table:"crs-kol-snot-22",form_module:"snot-22-form", task_name:"SNOT - 22" };
@@ -39,7 +39,7 @@
     m[p+"munhalsa-form"] ={url:H+"/form-grid/questionnaires/munhalsa-form.html",Table:"crs-kol-munhalsa", task_name:"MUNHÄLSA" };
 
     m[p+"samtycke-data"] ={url:H+"/form-grid/backend/samtycke-data.html",Table:"crs-kol-samtycke",form_module:"samtycke-form", task_name:"Samtycke" };
-    m[p+"samtycke-form"] ={url:H+"/form-grid/backend/samtycke-form.html",Table:"crs-kol-samtycke", task_name:"samtycke" };
+    m[p+"samtycke-form"] ={url:H+"/form-grid/backend/samtycke-form.html",Table:"crs-kol-samtycke",progress:'samtycke', task_name:"Samtycke" };
     m[p+"lab-data"] ={url:H+"/form-grid/backend/lab-data.html",Table:"crs-kol-lab",form_module:"lab-form", task_name:"Laboratorie resultat" };
     m[p+"lab-form"] ={url:H+"/form-grid/backend/lab-form.html",Table:"crs-kol-lab", task_name:"Laboratorie resultat" };
     m[p+"spirometri-data"] ={url:H+"/form-grid/backend/spirometri-data.html",Table:"crs-kol-spirometri",form_module:"spirometri-form", task_name:"Spirometri" };
@@ -100,9 +100,10 @@
     m[p+"registration-data"]      ={url:H+"/form-grid/screening/registration-data.html",   Table:"crs-kol-participant",form_module:"registration-form",task_name:"Participant"};
     m[p+"registration-form"]      ={url:H+"/form-grid/screening/registration-form.html",Table:"crs-kol-participant",Table2:"crs-kol-screening", task_name:"Participant" };
     
-    m[p+"randomisation-check-data"]      ={url:H+"/form-grid/backend/randomisation-check-data.html",   Table:"crs-kol-progress",task_name:"Randomisation Check"};
-    m[p+"progress-new-form"]      ={url:H+"/form-grid/backend/progress-new-form.html",   Table:"crs-kol-progress",task_name:"Progress form"};
-    m[p+"progress-mod-form"]      ={url:H+"/form-grid/backend/progress-mod-form.html",   Table:"crs-kol-progress",task_name:"Progress form"};
+    //m[p+"randomisation-check-data"] ={url:H+"/form-grid/backend/randomisation-check-data.html",   Table:"crs-kol-progress",task_name:"Randomisation Check"};
+    //m[p+"progress-new-form"] ={url:H+"/form-grid/backend/progress-new-form.html",   Table:"crs-kol-progress",task_name:"Progress form"};
+    //m[p+"progress-mod-form"] ={url:H+"/form-grid/backend/progress-mod-form.html",   Table:"crs-kol-progress",task_name:"Progress form"};
+    m[p+"progress_form"] ={url:H+"/form-grid/backend/progress-form.html",   Table:"crs-kol-progress",task_name:"Progress form"};
  
     m[p+"start-date"]      ={url:H+"/form-grid/backend/date-start-form.html",   Table:"crs-kol-progress", task_name:"Start Date"};
     m[p+"send-email-control-data"]      ={url:H+"/form-grid/backend/send-email-control-data.html",   Table:"crs-kol-progress"};

@@ -705,6 +705,10 @@ textarea {
     background-color: #8f4868;
     color: #fff;
 }
+#D__ID .qbtn.done{
+    background-color: #66ad5d;
+    color: #fff;
+}
 #D__ID .qbtn.disabled,
 #D__ID .qbtn:disabled {
     background-color: rgba(173, 93, 129, 0.2);
