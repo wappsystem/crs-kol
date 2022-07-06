@@ -125,51 +125,54 @@
 			})*/
 			//-------------------------------------
 			m.before_submit = function (data, index) {
-				//var I1 = $('#F__ID input[name=Randomisation_Number').val(); if (I1 != '' && I1 != '-') index.I1 = parseInt(I1);
+                console.log("MMM: "+JSON.stringify(index))
+                if (m.input.record == undefined){
+                    data.p4_1="";data.p4_2="";data.p4_3="";data.p4_4="";data.p4_5="";data.p4_6="";data.p4_7="";data.p4_8="";
+                    data.p1_1="";
+                    data.p2_1="";data.p2_2="";data.p3_1="";data.p3_2="";data.p3_3="";data.p3_4="";
+                    data.p5_1="";data.p6_1="";
+                }
+                console.log(data)
 			}
 			//-------------------------------------
-            /*m.after_update = function (data,index) {
-                //console.log('Data: '+JSON.stringify(data));
-                //console.log(index.result.UID)
-                var pid=(index.result.UID).toString();
-                var record={};
-                var tb = $vm.module_list["progress-mod-form"].Table;
-                query={'Data.Participant':pid}
-                //console.log(query);
-                jQuery.ajaxSetup({async:false});
-                $vm.request({ cmd: "find", table: tb,query:query, limit:1 }, function (res) {
-                    if(res.permission==false){
-                        alert("No permission");
-                        return;
-                    }
-                    if(res.result.length==0){
-                    }
-                    else{
-                        record=res.result[0]
-                        record.Data.group=data.Group;
-                        //record.Data.Start_date=index.result.I2;
-                        record.Data.access_code=data.access_code;
-                        //console.log(JSON.stringify(record))
-                        $vm.request({cmd:'update',id:record._id,table:tb,data:record.Data},function(res){
-                            //-----------------------------
-                            if(res.status=="lk"){
-                                $vm.alert("This record is locked.");
-                                return;
+            m.after_insert = function (data,index) {
+                console.log("MMM: "+JSON.stringify(index))
+                console.log("----------------------------")                
+                console.log("MMM: "+JSON.stringify(data))
+            }
+/*                if (m.input.record == undefined){
+                    console.log("------------------------------------------------------")
+                    console.log(JSON.stringify(index.result.ops[0].UID))
+                    console.log("------------------------------------------------------")
+                    console.log(JSON.stringify(index))
+                    var pid=index.result.ops[0].UID;
+                    var record={};
+                    var tb = $vm.module_list["progress-form"].Table;
+                    //console.log(query);
+                    jQuery.ajaxSetup({async:false});
+                    var dataA={};
+                    var indexA={};
+                    dataA.Participant_uid=pid.toString();
+                    dataA.nas="";dataA.luftvagsformular="";dataA.snot="";dataA.sf36="";dataA.cat="";dataA.mmrc="";dataA.hads="";dataA.munhalsa="";dataA.samtycke="";
+                    dataA.lab="";dataA.spirometri="";dataA.langd="";dataA.fiberskopi="";dataA.rhinomanometri="";dataA.akustisk="";
+                    dataA.cbct="";dataA.derived="";
+                    indexA.I1=pid;
+                    $vm.request({ cmd: "insert", table:tb,data:dataA,index:indexA }, function (res) {
+                        if(res.status=="np"){
+                            alert("No permission to insert a new record in to the database.");
+                            if(m.input!=undefined && m.input.goback!=undefined){
+                                $vm.refresh=1;
+                                window.history.go(-1);       //from grid
                             }
-                            //-----------------------------
-                            if(res.status=="np"){
-                                alert("No permission to update this record.");
-                                return;
-                            }
-                        })
-                    }
-                })
-                jQuery.ajaxSetup({async:true});
-                $vm.refresh=1;
-                m.change_status++;
-                window.history.go(-1);   
-            }*/
-		}
+                            return;
+                        }
+                        jQuery.ajaxSetup({async:true});
+                        $vm.refresh=1;
+                        window.history.go(-1);   
+                    })
+                }
+		    }*/
+        }
 	</script>
 	<style>
 		#D__ID .mt-95 {

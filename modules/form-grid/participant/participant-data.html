@@ -9,7 +9,8 @@
             //-------------------------------------
             $('#title__ID').text('Försöksperson');            
             //-------------------------------------
-            var fields="_Participant_ID,Subject_ID|subjectid,gender,dob,yob,Date_of_visit_OHN,Date_of_visit_Odontologen,Date_of_visit_Lungfunktionsundersökning,_Data_Entry,_Questionnaire,_Login_ID,_Password";
+            var progress="1.1|p1_1,2.1|p2_1,2.2|p2_2,3.1|p3_1,3.2|p3_2,3.3|p3_3,3.4|p3_4,4.1|p4_1,4.2|p4_2,4.3|p4_3,4.4|p4_4,4.5|p4_5,4.6|p4_6,4.7|p4_7,4.8|p4_8,5.1|p5_1,6.1|p6_1,"
+            var fields="_Participant_ID,Subject_ID|subjectid,gender,dob,yob,Date_of_visit_OHN,Date_of_visit_Odontologen,Date_of_visit_Lungfunktionsundersökning,"+progress+"Fyll formulär|_Data_Entry,Frågeformulär|_Questionnaire,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.load=function(){
@@ -22,7 +23,7 @@
                         td.html(records[I].UID);
                         break;
                     case '_Data_Entry':
-                        td.html("<u style='cursor:pointer'>Data Entry</u>");
+                        td.html("<u style='cursor:pointer'>Fyll formulär</u>");
                         td.find('u').on('click',function(){
                             console.log(JSON.stringify(records[I]))
     						$vm.load_module(m.child_panel,'',{record:records[I]});
@@ -48,6 +49,25 @@
                         break;
                     case '_Login_ID':
                         td.html(records[I].UID);
+                        break;
+                    case 'p1_1':
+                    case 'p2_1':
+                    case 'p2_2':
+                    case 'p3_1':
+                    case 'p3_2':
+                    case 'p3_3':
+                    case 'p3_4':
+                    case 'p4_1':
+                    case 'p4_2':
+                    case 'p4_3':
+                    case 'p4_4':
+                    case 'p4_5':
+                    case 'p4_6':
+                    case 'p4_7':
+                    case 'p4_8':
+                    case 'p5_1':
+                    case 'p6_1':
+                        if(records[I].Data[field]!="" && records[I].Data[field]!=undefined) td.html("<span style='color:"+records[I].Data[field]+"'><i class='fas fa-circle'></i></span>")
                         break;
                 }
             }
