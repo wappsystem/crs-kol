@@ -84,9 +84,15 @@ m.after_update= function(data,index){
     uid=parseInt(uid)
     var col=data.sysStatus;
     var pt_tab=$vm.module_list['participant-data'].Table;
+    var find="find";
+    var update="update";
+    if($vm.online_questionnaire==1){
+        find="find-p1";
+        update="update-data-p1";
+    }
     var query={UID:uid}
     jQuery.ajaxSetup({ async: false });
-    $vm.request({ cmd: "find", table: pt_tab, query:query, limit: 1 }, function (res) {
+    $vm.request({ cmd:find,table:pt_tab,query:query,limit:1}, function (res) {
         if (res.sys.permission == false) {
             $vm.alert("No permission. Private database table, ask the table's owner for permissions.");
             return;
@@ -95,7 +101,7 @@ m.after_update= function(data,index){
             var pt_data=res.result[0].Data;
             //pt_data[$vm.module_list['samtycke-form'].progress]=col;
             pt_data[$vm.module_list[$vm.vm['__ID'].name].progress]=col;
-            $vm.request({cmd:'update',id:res.result[0]._id,table:pt_tab,data:pt_data},function(res){
+            $vm.request({cmd:update,id:res.result[0]._id,table:pt_tab,data:pt_data},function(res){
                 //-----------------------------
                 if(res.status=="lk"){
                     $vm.alert("This record is locked.");
@@ -115,41 +121,58 @@ m.after_update= function(data,index){
     jQuery.ajaxSetup({ async: true });
 }
 //-------------------------------------
-    m.after_insert= function(data,index){
-        var uid=data.Participant_uid;
-        uid=parseInt(uid)
-        var col=data.sysStatus;
-        var pt_tab=$vm.module_list['participant-data'].Table;
-        var query={UID:uid}
-        jQuery.ajaxSetup({ async: false });
-        $vm.request({ cmd: "find", table: pt_tab, query:query, limit: 1 }, function (res) {
-            if (res.sys.permission == false) {
-                $vm.alert("No permission. Private database table, ask the table's owner for permissions.");
-                return;
-            }        
-            if (res.result.length > 0) {
-                var pt_data=res.result[0].Data;
-                //pt_data[$vm.module_list['samtycke-form'].progress]=col;
-                pt_data[$vm.module_list[$vm.vm['__ID'].name].progress]=col;
-                $vm.request({cmd:'update',id:res.result[0]._id,table:pt_tab,data:pt_data},function(res){
-                    //-----------------------------
-                    if(res.status=="lk"){
-                        $vm.alert("This record is locked.");
-                        return;
-                    }
-                    //-----------------------------
-                    if(res.status=="np"){
-                        alert("No permission to update this record.");
-                        return;
-                    }
-                    //-----------------------------
-                    $vm.refresh=1;
-                    window.history.go(-1);    
-                })
-            }
-        })
-        jQuery.ajaxSetup({ async: true });
+m.after_insert= function(data,index){
+    var uid=data.Participant_uid;
+    uid=parseInt(uid)
+    var col=data.sysStatus;
+    var pt_tab=$vm.module_list['participant-data'].Table;
+    var find="find";
+    var update="update";
+    if($vm.online_questionnaire==1){
+        find="find-p1";
+        update="update-data-p1";
     }
+    var query={UID:uid}
+    jQuery.ajaxSetup({ async: false });
+    $vm.request({ cmd:find,table:pt_tab,query:query,limit:1}, function (res) {
+        if (res.sys.permission == false) {
+            $vm.alert("No permission. Private database table, ask the table's owner for permissions.");
+            return;
+        }        
+        if (res.result.length > 0) {
+            var pt_data=res.result[0].Data;
+            /*var index={}
+            index.P1=res.result[0].P1;
+            index.Submit_date=res.result[0].Submit_date;
+            index.Submit_name=res.result[0].Submit_name;
+            index.Submitted_by=res.result[0].Submitted_by;
+            index.Table=res.result[0].Table;
+            index.UID=res.result[0].UID;
+            index.Update_date=res.result[0].Update_date;
+            index.Updated_by=res.result[0].Updated_by;
+            index._id=res.result[0]._id;*/
+            
+            //pt_data[$vm.module_list['samtycke-form'].progress]=col;
+            pt_data[$vm.module_list[$vm.vm['__ID'].name].progress]=col;
+            $vm.request({cmd:update,id:res.result[0]._id,table:pt_tab,data:pt_data},function(res){
+                //-----------------------------
+                if(res.status=="lk"){
+                    $vm.alert("This record is locked.");
+                    return;
+                }
+                //-----------------------------
+                if(res.status=="np"){
+                    alert("No permission to update this record.");
+                    return;
+                }
+                //-----------------------------
+                $vm.refresh=1;
+                window.history.go(-1);    
+            })
+        }
+    })
+    jQuery.ajaxSetup({ async: true });
+}
 //-------------------------------------
 var status_of_data=function(data){
     var N1=0,N2=0;
