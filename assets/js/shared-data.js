@@ -171,13 +171,16 @@ m.data_process=function(){
         //-------------------------- ,participant_uid:records[index].Data.Participant_uid
         //rendering the notes;
         $("#grid__ID td[data-id=_Notes]").each(function(index){
-            if(m.records[index].sys_x!=undefined){
-                var t=m.records[index].sys_x.Title;
-                var c=m.records[index].sys_x.Color
-                $(this).html("<u style='cursor:pointer;color:"+c+"'>"+t+"</u>");
-                $(this).find('u').on('click',function(){
-                    $vm.load_module(notes,'',{task_name:m.task_name,task_uid:m.records[index].UID,participant_uid:m.records[index].Data.Participant_uid})
-                })
+            if(m.records[index]!=undefined){
+                if(m.records[index].sys_x!=undefined){
+                    console.log("C")
+                    var t=m.records[index].sys_x.Title;
+                    var c=m.records[index].sys_x.Color
+                    $(this).html("<u style='cursor:pointer;color:"+c+"'>"+t+"</u>");
+                    $(this).find('u').on('click',function(){
+                        $vm.load_module(notes,'',{task_name:m.task_name,task_uid:m.records[index].UID,participant_uid:m.records[index].Data.Participant_uid})
+                    })
+                }
             }
         });
         //--------------------------

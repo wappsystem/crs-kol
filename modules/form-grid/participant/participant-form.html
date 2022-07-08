@@ -132,13 +132,9 @@
                     data.p2_1="";data.p2_2="";data.p3_1="";data.p3_2="";data.p3_3="";data.p3_4="";
                     data.p5_1="";data.p6_1="";
                 }
-                console.log(data)
 			}
 			//-------------------------------------
             m.after_insert = function (data,index) {
-                console.log("MMM: "+JSON.stringify(index))
-                console.log("----------------------------")                
-                console.log("MMM: "+JSON.stringify(data))
                 pt_tab=$vm.module_list[$vm.vm['__ID'].name].Table;
                 index.P1=','+$vm.module_list[$vm.vm['__ID'].name].Table+'-'+index.result.ops[0].UID+',';
                 var id=index.result.ops[0]._id;
@@ -159,38 +155,6 @@
                 })
 
             }
-/*                if (m.input.record == undefined){
-                    console.log("------------------------------------------------------")
-                    console.log(JSON.stringify(index.result.ops[0].UID))
-                    console.log("------------------------------------------------------")
-                    console.log(JSON.stringify(index))
-                    var pid=index.result.ops[0].UID;
-                    var record={};
-                    var tb = $vm.module_list["progress-form"].Table;
-                    //console.log(query);
-                    jQuery.ajaxSetup({async:false});
-                    var dataA={};
-                    var indexA={};
-                    dataA.Participant_uid=pid.toString();
-                    dataA.nas="";dataA.luftvagsformular="";dataA.snot="";dataA.sf36="";dataA.cat="";dataA.mmrc="";dataA.hads="";dataA.munhalsa="";dataA.samtycke="";
-                    dataA.lab="";dataA.spirometri="";dataA.langd="";dataA.fiberskopi="";dataA.rhinomanometri="";dataA.akustisk="";
-                    dataA.cbct="";dataA.derived="";
-                    indexA.I1=pid;
-                    $vm.request({ cmd: "insert", table:tb,data:dataA,index:indexA }, function (res) {
-                        if(res.status=="np"){
-                            alert("No permission to insert a new record in to the database.");
-                            if(m.input!=undefined && m.input.goback!=undefined){
-                                $vm.refresh=1;
-                                window.history.go(-1);       //from grid
-                            }
-                            return;
-                        }
-                        jQuery.ajaxSetup({async:true});
-                        $vm.refresh=1;
-                        window.history.go(-1);   
-                    })
-                }
-		    }*/
         }
 	</script>
 	<style>
