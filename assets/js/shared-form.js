@@ -74,6 +74,7 @@ m.before_submit=function(data){
         $vm.alert("Please select a participant. Make sure Participant ID has a number.") 
         return false;    
     }
+    console.log("BBBB: "+$("#F__ID input[name=_status]:checked").val())
     if($("#F__ID input[name=_status]:checked").val()=='' || $("#F__ID input[name=_status]:checked").val()==undefined)
         data.sysStatus=status_of_data(data);
     else data.sysStatus=$("#F__ID input[name=_status]:checked").val();
