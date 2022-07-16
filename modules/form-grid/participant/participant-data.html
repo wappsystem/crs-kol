@@ -10,7 +10,7 @@
             $('#title__ID').text('Försökspersoner');            
             //-------------------------------------
             var progress="1.1|p1_1,2.1|p2_1,2.2|p2_2,3.1|p3_1,3.2|p3_2,3.3|p3_3,3.4|p3_4,4.1|p4_1,4.2|p4_2,4.3|p4_3,4.4|p4_4,4.5|p4_5,4.6|p4_6,4.7|p4_7,4.8|p4_8,5.1|p5_1,6.1|p6_1,"
-            var fields="_Participant_ID,Subject_ID|subjectid,gender,dob,yob,Date_of_visit_OHN,Date_of_visit_Odontologen,Date_of_visit_Lungfunktionsundersökning,"+progress+"Fyll formulär|_Data_Entry,Frågeformulär|_Questionnaire,_Login_ID,_Password";
+            var fields="_Participant_ID,Subject_ID|subjectid,gender,mob,yob,Date_of_visit_OHN,Date_of_visit_Odontologen,Date_of_visit_Lungfunktionsundersökning,"+progress+"Fyll formulär|_Data_Entry,Frågeformulär|_Questionnaire,Häslodeklaration|_Halsodeklaration,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.load=function(){
@@ -44,6 +44,18 @@
                             var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
                             var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
                             var q_url=$vm.module_list[m.online_questionnaire_bl].url+u+db+d+p;
+    						window.open(q_url);
+                        });
+                        break;
+                    case '_Halsodeklaration':
+                        //MongoDB
+                        td.html("<u style='cursor:pointer'>Häslodeklaration</u>");
+                        td.find('u').on('click',function(){
+                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
+                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
+                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
+                            var u="?username="+records[I].UID+"&password="+records[I].Data._Password;
+                            var q_url=$vm.module_list[m.online_questionnaire_hd].url+u+db+d+p;
     						window.open(q_url);
                         });
                         break;

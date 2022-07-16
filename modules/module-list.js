@@ -10,16 +10,19 @@
                             ,form_module:"participant-form",
                             child_panel:"child-panel",
                             online_questionnaire_bl:"oq",
+                            online_questionnaire_hd:"hd",
     };                   
     m[p+"participant-form"] ={url:H+"/form-grid/participant/participant-form.html",Table:"crs-kol-participant"},
     m[p+"notes-data"]       ={url:H+"/form-grid/questionnaires/notes-data.html",Table:"crs-kol-notes",form_module:"notes-form",router:1},
     m[p+"notes-form"]       ={url:H+"/form-grid/questionnaires/notes-form.html",Table:"crs-kol-notes"},
     m[p+"oq"] ={url:I+"/quest.html"},
+    m[p+"hd"] ={url:I+"/hd.html"},
     //m[p+"oq"] ={url:I+"/participant.html"},
 
     m[p+"main-panel"]    ={url:H+"/panels/main.html", };
     m[p+"child-panel"]    ={url:H+"/panels/child.html", };
     m[p+"quest-panel"]     ={url:H+"/panels/quest.html"};
+    m[p+"hd-panel"]     ={url:H+"/panels/hd.html"};
     
     m[p+"nas-vas-data"] ={url:H+"/form-grid/questionnaires/nas-vas-data.html",Table:"crs-kol-nas-vas",form_module:"nas-vas-form",task_name:"NÄS-VAS" };
     m[p+"nas-vas-form"] ={url:H+"/form-grid/questionnaires/nas-vas-form.html",Table:"crs-kol-nas-vas",progress:'p4_1',task_name:"NÄS-VAS" };
@@ -37,6 +40,8 @@
     m[p+"hads-form"] ={url:H+"/form-grid/questionnaires/hads-form.html",Table:"crs-kol-hads",progress:'p4_7', task_name:"HAD SJÄLVSKATTNINGSFORMULÄR" };
     m[p+"munhalsa-data"] ={url:H+"/form-grid/questionnaires/munhalsa-data.html",Table:"crs-kol-munhalsa",form_module:"munhalsa-form", task_name:"MUNHÄLSA" };
     m[p+"munhalsa-form"] ={url:H+"/form-grid/questionnaires/munhalsa-form.html",Table:"crs-kol-munhalsa",progress:'p4_8', task_name:"MUNHÄLSA" };
+    m[p+"halsodeklaration-data"] ={url:H+"/form-grid/questionnaires/halsodeklaration-data.html",Table:"crs-kol-halsodeklaration",form_module:"halsodeklaration-form", task_name:"HÄLSODEKLARATION" };
+    m[p+"halsodeklaration-form"] ={url:H+"/form-grid/questionnaires/halsodeklaration-form.html",Table:"crs-kol-halsodeklaration",progress:'p5_1', task_name:"HÄLSODEKLARATION" };
 
     m[p+"samtycke-data"] ={url:H+"/form-grid/backend/samtycke-data.html",Table:"crs-kol-samtycke",form_module:"samtycke-form", task_name:"Samtycke" };
     m[p+"samtycke-form"] ={url:H+"/form-grid/backend/samtycke-form.html",Table:"crs-kol-samtycke",progress:'p1_1', task_name:"Samtycke" };
