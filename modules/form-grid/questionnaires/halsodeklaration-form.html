@@ -373,7 +373,7 @@
                                 <div class="questiongroup">
                                     <fieldset >
                                         <label class="" style="width:100%"><span>Svar:</span>
-                                            <input type="text" class="form-control" name="yrke" >
+                                            <input type="text" class="form-control" name="yrke" required >
                                         </label>
                                     </fieldset>
                                 </div>
@@ -458,6 +458,7 @@
                                     <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
                                 </div>
                             </div>
+                            <input type="radio" name="_status" value="#00FF00" checked style="display:none">
                         </form>
                     </div>
                 </div>
@@ -481,28 +482,78 @@
         var load2 = m.load;
         m.load = function () {
             load2();
-            $('#lakemedel__ID').hide();
-            if($('#D__ID input[name=lakemedel]:checked').val()=='1') $('#lakemedel__ID').show();
-
-            $('#andra_sjukdomar__ID').hide();
-            if($('#D__ID input[name=andra_sjukdomar]:checked').val()=='1') $('#andra_sjukdomar__ID').show();
-
-            $('#blodfortunnande__ID').hide();
-            if($('#D__ID input[name=blodfortunnande]:checked').val()=='1') $('#blodfortunnande__ID').show();
-
-            $('#acetylsalicylsyra__ID').hide();
-            if($('#D__ID input[name=acetylsalicylsyra]:checked').val()=='1') $('#acetylsalicylsyra__ID').show();
-
-            $('#allergier__ID').hide();
-            if($('#D__ID input[name=allergier]:checked').val()=='1') $('#allergier__ID').show();
-
-            $('#opererad__ID').hide();
-            if($('#D__ID input[name=opererad]:checked').val()=='1') $('#opererad__ID').show();
-
-            $('#roker__ID').hide();
-            if($('#D__ID input[name=roker]:checked').val()=='1' || $('#D__ID input[name=roker]:checked').val()=='2' ) $('#roker__ID').show();
-
-            //-------------------------------------
+            //--------------
+            if($('#D__ID input[name=lakemedel]:checked').val()=='1'){
+                $('#lakemedel__ID').show()
+            }
+            else {
+                $('#lakemedel__ID').hide();
+            }
+            //--------------
+            if($('#D__ID input[name=andra_sjukdomar]:checked').val()=='1') {
+                $('#andra_sjukdomar__ID').show();
+                $('#D__ID textarea[name=andra_sjukdomar_vilka]').prop('required',true);
+            }
+            else {
+                $('#andra_sjukdomar__ID').hide();
+                $('#D__ID textarea[name=andra_sjukdomar_vilka]').prop('required',false);
+            }
+            //--------------
+            if($('#D__ID input[name=blodfortunnande]:checked').val()=='1') {
+                $('#blodfortunnande__ID').show();
+                $('#D__ID textarea[name=blodfortunnande_vilka]').prop('required',true);
+            }
+            else {
+                $('#blodfortunnande__ID').hide();
+                $('#D__ID textarea[name=blodfortunnande_vilka]').prop('required',false);
+            }
+            //--------------
+            if($('#D__ID input[name=acetylsalicylsyra]:checked').val()=='1') {
+                $('#acetylsalicylsyra__ID').show();
+                $('#D__ID textarea[name=acetylsalicylsyra_vilka]').prop('required',true);
+            }
+            else {
+                $('#acetylsalicylsyra__ID').hide();
+                $('#D__ID textarea[name=acetylsalicylsyra_vilka]').prop('required',false);
+            }
+            //--------------
+            if($('#D__ID input[name=allergier]:checked').val()=='1') {
+                $('#allergier__ID').show();
+                $('#D__ID textarea[name=allergier_vilka]').prop('required',true);
+            }
+            else {
+                $('#allergier__ID').hide();
+                $('#D__ID textarea[name=allergier_vilka]').prop('required',false);
+            }
+            //--------------
+            if($('#D__ID input[name=opererad]:checked').val()=='1') {
+                $('#opererad__ID').show();
+                $('#D__ID textarea[name=opererad_for_vad]').prop('required',true);
+            }
+            else {
+                $('#opererad__ID').hide();
+                $('#D__ID textarea[name=opererad_for_vad]').prop('required',false);
+            }
+            //--------------
+            if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker]:checked').val()!=undefined ) {
+                $('#roker__ID').show();
+            }
+            else {
+                $('#roker__ID').hide();
+            }
+            //--------------
+            if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
+            else if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker_dygn]').val()!='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',false);
+            }
+            else if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()!='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',false);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
 
             //-------item a part
             m.item_a_records = []; if (m.input.record != undefined) m.item_a_records = m.input.record.Data.items;
@@ -516,35 +567,112 @@
         })
         //-------------------------------------
         $('#D__ID input[name=andra_sjukdomar]').change(function(){
-            if($('#D__ID input[name=andra_sjukdomar]:checked').val()=='1')  $('#andra_sjukdomar__ID').show();
-            else $('#andra_sjukdomar__ID').hide();
+            if($('#D__ID input[name=andra_sjukdomar]:checked').val()=='1') {
+                $('#andra_sjukdomar__ID').show();
+                $('#D__ID textarea[name=andra_sjukdomar_vilka]').prop('required',true);
+            }
+            else {
+                $('#andra_sjukdomar__ID').hide();
+                $('#D__ID textarea[name=andra_sjukdomar_vilka]').prop('required',false);
+            }
         })
         //-------------------------------------
         $('#D__ID input[name=blodfortunnande]').change(function(){
-            if($('#D__ID input[name=blodfortunnande]:checked').val()=='1')  $('#blodfortunnande__ID').show();
-            else $('#blodfortunnande__ID').hide();
+            if($('#D__ID input[name=blodfortunnande]:checked').val()=='1') {
+                $('#blodfortunnande__ID').show();
+                $('#D__ID textarea[name=blodfortunnande_vilka]').prop('required',true);
+            }
+            else {
+                $('#blodfortunnande__ID').hide();
+                $('#D__ID textarea[name=blodfortunnande_vilka]').prop('required',false);
+            }
         })
         //-------------------------------------
         $('#D__ID input[name=acetylsalicylsyra]').change(function(){
-            if($('#D__ID input[name=acetylsalicylsyra]:checked').val()=='1')  $('#acetylsalicylsyra__ID').show();
-            else $('#acetylsalicylsyra__ID').hide();
+            if($('#D__ID input[name=acetylsalicylsyra]:checked').val()=='1') {
+                $('#acetylsalicylsyra__ID').show();
+                $('#D__ID textarea[name=acetylsalicylsyra_vilka]').prop('required',true);
+            }
+            else {
+                $('#acetylsalicylsyra__ID').hide();
+                $('#D__ID textarea[name=acetylsalicylsyra_vilka]').prop('required',false);
+            }
         })
         //-------------------------------------
         $('#D__ID input[name=allergier]').change(function(){
-            if($('#D__ID input[name=allergier]:checked').val()=='1')  $('#allergier__ID').show();
-            else $('#allergier__ID').hide();
+            if($('#D__ID input[name=allergier]:checked').val()=='1') {
+                $('#allergier__ID').show();
+                $('#D__ID textarea[name=allergier_vilka]').prop('required',true);
+            }
+            else {
+                $('#allergier__ID').hide();
+                $('#D__ID textarea[name=allergier_vilka]').prop('required',false);
+            }
         })
         //-------------------------------------
         $('#D__ID input[name=opererad]').change(function(){
-            if($('#D__ID input[name=opererad]:checked').val()=='1')  $('#opererad__ID').show();
-            else $('#opererad__ID').hide();
+            if($('#D__ID input[name=opererad]:checked').val()=='1') {
+                $('#opererad__ID').show();
+                $('#D__ID textarea[name=opererad_for_vad]').prop('required',true);
+            }
+            else {
+                $('#opererad__ID').hide();
+                $('#D__ID textarea[name=opererad_for_vad]').prop('required',false);
+            }
         })
         //-------------------------------------
         $('#D__ID input[name=roker]').change(function(){
-            if($('#D__ID input[name=roker]:checked').val()!='0')  $('#roker__ID').show();
-            else $('#roker__ID').hide();
+            if($('#D__ID input[name=roker]:checked').val()!='0') {
+                $('#roker__ID').show();
+            }
+            else {
+                $('#roker__ID').hide();
+                $('#D__ID input[name=roker_dygn]').prop('required',false);
+                $('#D__ID input[name=roker_vecka]').prop('required',false);
+            }
+            if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
+            else if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker_dygn]').val()!='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',false);
+            }
+            else if($('#D__ID input[name=roker]:checked').val()!='0' && $('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()!='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',false);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
         })
         //-------------------------------------
+        $('#D__ID input[name=roker_dygn]').change(function(){
+            if($('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
+            else if($('#D__ID input[name=roker_dygn]').val()!='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',false);
+            }
+            else if($('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()!='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',false);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
+        })
+        //-------------------------------------
+        $('#D__ID input[name=roker_vecka]').change(function(){
+            if($('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
+            else if($('#D__ID input[name=roker_dygn]').val()!='' && $('#D__ID input[name=roker_vecka]').val()=='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',true);
+                $('#D__ID input[name=roker_vecka]').prop('required',false);
+            }
+            else if($('#D__ID input[name=roker_dygn]').val()=='' && $('#D__ID input[name=roker_vecka]').val()!='' ) {
+                $('#D__ID input[name=roker_dygn]').prop('required',false);
+                $('#D__ID input[name=roker_vecka]').prop('required',true);
+            }
+        })
 
         //item a part
         m.item_a_fields = "Läkemedel|Lakemedel,Styrka,Dosering,Ta bort|_Remove";
@@ -577,8 +705,7 @@
         m.item_a_after_remove = function () {
         }
         //----------------------------------
-
-        }
+    }
     </script>
     <style>
         #D__ID{
